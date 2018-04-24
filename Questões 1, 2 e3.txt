@@ -1,0 +1,30 @@
+Questões
+
+1)
+Time A={4,8,12,16}
+Time B={3,7,11,15}
+
+Produto Cartesiano:
+{4,3} {4,7} {4,11} {4,15}
+{8,3} {8,7} {8,11} {8,15}
+{12,3} {12,7} {12,11} {12,15}
+{16,3} {16,7} {16,11} {16,15}
+
+
+2)
+
+
+3)
+União dos funcionários que bateram a meta nos meses A e B
+Mês A = {1,2,3,4,5,6,7}
+Mês B = {1,2,8,9,10,20,11}
+União de A com B = {1,2,3,4,5,6,7,8,9,10,20,11}
+
+Melhores Vendedores em algum mês = {1,9,11,8,15,5,10,18}
+
+Interseção de Melhores Vendedores com a União de A com B:
+{1,9,11,8,5,10}
+
+Estes são os funcionários que deveram receber o premio no 
+final do ano: {1,9,11,8,5,10}
+
