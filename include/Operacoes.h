@@ -1,6 +1,7 @@
 #ifndef OPERACOES_H
 #define OPERACOES_H
 #include "../include/Instancias.h"
+#include "../include/Relacao.h"
 
 
 class Operacoes
@@ -19,6 +20,8 @@ class Operacoes
         static void serOQuadradoDe(Instancias);
         static void serRaizQuadradaDe(Instancias);
         static void relacaoDoUsuario(Instancias);
+        static void classificarRelacao(Relacao, Instancias);
+
 };
 
 #endif // OPERACOES_H

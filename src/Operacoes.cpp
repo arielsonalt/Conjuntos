@@ -14,7 +14,7 @@
 using namespace std;
 Operacoes::Operacoes()
 {
-    //ctor
+
 
 }
 
@@ -607,5 +607,37 @@ void Operacoes::relacaoDoUsuario(Instancias instancia){
     }
     cout<<"}"<<endl;
 }
+void Operacoes::classificarRelacao(Relacao relacao, Instancias instancia ){
+    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
+    Conjunto conjunto = apoio[0];
+    vector <int> vetorConjuntoA = conjunto.getConjunto();
 
+
+    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
+    Conjunto conjunto2 = apoio2[1];
+    vector <int> vetorConjuntoB = conjunto2.getConjunto();
+
+    bool void funcional(Relacao){
+
+    }
+    bool void injetora(Relacao){
+
+    }
+    bool void total(Relacao){
+
+    }
+    bool void sobrejetora(Relacao){
+
+    }
+    bool void monomorfismo(Relacao){
+
+    }
+    bool void epimorfismo(Relacao){
+
+    }
+    bool void isomorfismo(Relacao){
+
+    }
+
+}
 

@@ -22,10 +22,10 @@ int main()
    while(numero != 7){
 
     Instancias instancia;
-   cout<<endl;
+    cout<<endl;
     cout<<"DADOS DE ENTRADA";
-   vector <Conjunto> conjuntos = instancia.getUniverso().getConjuntos();
-   vector <Numero> numeros = instancia.getUniverso().getNumeros();
+    vector <Conjunto> conjuntos = instancia.getUniverso().getConjuntos();
+    vector <Numero> numeros = instancia.getUniverso().getNumeros();
     cout<<""<<endl;
    for(int i=0;i< conjuntos.size();i++){
         cout<<conjuntos[i].getNome()<<" ={";
