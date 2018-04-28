@@ -105,3 +105,95 @@
 	<stdlib.h>
 	<stdio.h>
 
+1524250111 source:c:\users\ariel\dropbox\github\conjuntos\src\conjunto.cpp
+	"../include/Conjunto.h"
+	"../include/Elemento.h"
+	<iostream>
+	<vector>
+	<string>
+
+1521934572 c:\users\ariel\dropbox\github\conjuntos\include\conjunto.h
+	"../include/Elemento.h"
+	<string>
+	<vector>
+
+1521934674 c:\users\ariel\dropbox\github\conjuntos\include\elemento.h
+	<string>
+	"../include/Elemento.h"
+
+1521293107 source:c:\users\ariel\dropbox\github\conjuntos\src\elemento.cpp
+	"../include/Elemento.h"
+	<iostream>
+	<string>
+
+1521974333 source:c:\users\ariel\dropbox\github\conjuntos\src\instancias.cpp
+	"../include/Instancias.h"
+	"../include/Universo.h"
+	"../include/Conjunto.h"
+	"../include/Elemento.h"
+	"../include/Numero.h"
+	<exception>
+	<cstdlib>
+	<iostream>
+	<fstream>
+	<sstream>
+	<string>
+	<queue>
+
+1521166795 c:\users\ariel\dropbox\github\conjuntos\include\instancias.h
+	"../include/Universo.h"
+
+1521973220 c:\users\ariel\dropbox\github\conjuntos\include\universo.h
+	"../include/Elemento.h"
+	"../include/Conjunto.h"
+	"../include/Numero.h"
+	<string>
+	<vector>
+
+1521934768 c:\users\ariel\dropbox\github\conjuntos\include\numero.h
+	"../include/Elemento.h"
+	<iostream>
+	<string>
+
+1521934807 source:c:\users\ariel\dropbox\github\conjuntos\src\numero.cpp
+	"../include/Numero.h"
+	"../include/Elemento.h"
+	<iostream>
+	<string>
+	<vector>
+
+1524403780 source:c:\users\ariel\dropbox\github\conjuntos\src\relacao.cpp
+	"Relacao.h"
+	<vector>
+	<iostream>
+	<ostream>
+	<stdlib.h>
+	<stdio.h>
+
+1524403780 c:\users\ariel\dropbox\github\conjuntos\include\relacao.h
+	<vector>
+
+1524250632 source:c:\users\ariel\dropbox\github\conjuntos\src\universo.cpp
+	"../include/Universo.h"
+	"../include/Elemento.h"
+	"../include/Conjunto.h"
+	<vector>
+
+1524831725 source:c:\users\ariel\dropbox\github\conjuntos\main.cpp
+	"include/Conjunto.h"
+	"include/Elemento.h"
+	"include/Instancias.h"
+	"include/Universo.h"
+	"include/Numero.h"
+	"include/Operacoes.h"
+	<exception>
+	<locale>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<string>
+
+1524951804 c:\users\ariel\dropbox\github\conjuntos\include\operacoes.h
+	"../include/Instancias.h"
+	"../include/Relacao.h"
+

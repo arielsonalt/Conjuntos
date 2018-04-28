@@ -606,8 +606,10 @@ void Operacoes::relacaoDoUsuario(Instancias instancia){
         }
     }
     cout<<"}"<<endl;
+   classificarRelacao(relacao,instancia);
 }
 void Operacoes::classificarRelacao(Relacao relacao, Instancias instancia ){
+    bool funcional(Relacao relacao);
     vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
     Conjunto conjunto = apoio[0];
     vector <int> vetorConjuntoA = conjunto.getConjunto();
@@ -617,27 +619,99 @@ void Operacoes::classificarRelacao(Relacao relacao, Instancias instancia ){
     Conjunto conjunto2 = apoio2[1];
     vector <int> vetorConjuntoB = conjunto2.getConjunto();
 
-    bool void funcional(Relacao){
+    vector <int> conjuntoD = relacao.getDominio();
+    vector <int> conjuntoI = relacao.getImagem();
+
+
+
+    bool total(Relacao){
+    //Se todos os elementos do domínio se ligarem com um algum da imagem
+       vector <int> elementosPercorridos;
+        int cont;
+        for(int i=0;i< conjuntoD.size();i++){
+                cont=0;
+            for(int j=0; j<elementosPercorridos.size();j++){
+                if(conjuntoD[i] == elementosPercorridos[j]){
+                    cont++;
+                }
+            }
+            if(cont==0){
+                   elementosPercorridos.push_back(conjuntoD[i]);
+                }
+        }
+
+        vector <int> elementosPercorridos2;
+        int cont2;
+        for(int i=0;i< conjuntoI.size();i++){
+                cont2=0;
+            for(int j=0; j<elementosPercorridos2.size();j++){
+                if(conjuntoI[i] == elementosPercorridos2[j]){
+                    cont2++;
+                }
+            }
+            if(cont2==0){
+                   elementosPercorridos2.push_back(conjuntoI[i]);
+                }
+        }
+
+        if((elementosPercorridos2.size() == vetorConjuntoB.size())&&(elementosPercorridos.size() == vetorConjuntoA.size()) ){
+            return 1;
+        }else{
+            return 0;
+        }
 
     }
-    bool void injetora(Relacao){
+    bool sobrejetora(Relacao){
 
     }
-    bool void total(Relacao){
+    bool monomorfismo(Relacao){
 
     }
-    bool void sobrejetora(Relacao){
+    bool epimorfismo(Relacao){
 
     }
-    bool void monomorfismo(Relacao){
-
-    }
-    bool void epimorfismo(Relacao){
-
-    }
-    bool void isomorfismo(Relacao){
+    bool isomorfismo(Relacao){
 
     }
 
 }
-
+bool Operacoes::injetora(Relacao){
+        vector <int> elementosPercorridos;
+        int cont;
+        for(int i=0;i< conjuntoI.size();i++){
+                cont=0;
+            for(int j=0; j<elementosPercorridos.size();j++){
+                if(conjuntoI[i] == elementosPercorridos[j]){
+                    cont++;
+                }
+            }
+            if(cont==0){
+                   elementosPercorridos.push_back(conjuntoI[i]);
+                }
+        }
+        if(elementosPercorridos.size() == vetorConjuntoB.size()){
+            return 1;
+        }else{
+            return 0;
+        }
+}
+bool Operacoes::funcional(Relacao relacao){
+        vector <int> elementosPercorridos;
+        int cont;
+        for(int i=0;i< conjuntoD.size();i++){
+                cont=0;
+            for(int j=0; j<elementosPercorridos.size();j++){
+                if(conjuntoD[i] == elementosPercorridos[j]){
+                    cont++;
+                }
+            }
+            if(cont==0){
+                   elementosPercorridos.push_back(conjuntoD[i]);
+                }
+        }
+        if(elementosPercorridos.size() == vetorConjuntoA.size()){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
