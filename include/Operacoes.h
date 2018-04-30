@@ -21,13 +21,10 @@ class Operacoes
         static void serRaizQuadradaDe(Instancias);
         static void relacaoDoUsuario(Instancias);
         static void classificarRelacao(Relacao, Instancias);
-        static bool funcional(Relacao);
-        static bool injetora(Relacao);
-        static bool total(Relacao);
-        static bool sobrejetora(Relacao);
-        static bool monomorfismo(Relacao);
-        static bool epimorfismo(Relacao);
-        static bool isomorfismo(Relacao);
+        static bool funcional(Relacao, Instancias);
+        static bool injetora(Relacao, Instancias);
+        static bool total(Relacao, Instancias);
+        static bool sobrejetora(Relacao, Instancias);
 
 };
 

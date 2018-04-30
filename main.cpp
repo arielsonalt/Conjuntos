@@ -19,7 +19,7 @@ int main()
 
    int numero=0;
 
-   while(numero != 7){
+   while(numero != 13){
 
     Instancias instancia;
     cout<<endl;
