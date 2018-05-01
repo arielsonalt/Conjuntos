@@ -160,7 +160,8 @@ void Operacoes::criarRelacao(vector<int>, vector<int>){
 
 }
 void Operacoes::menorQue(Instancias instancia){
-    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
+    if(instancia.getUniverso().getConjuntos().size() == 2){
+        vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
     Conjunto conjunto = apoio[0];
     vector <int> vetorConjuntoA = conjunto.getConjunto();
 
@@ -232,6 +233,10 @@ void Operacoes::menorQue(Instancias instancia){
     }
     cout<<"}"<<endl;
     classificarRelacao(relacao,instancia);
+    }else if(instancia.getUniverso().getConjuntos().size() == 3){
+
+    }
+
 }
 void Operacoes::maiorQue(Instancias instancia){
     vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
