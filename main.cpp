@@ -13,8 +13,7 @@
 
 using namespace std;
 
-int main()
-{
+int main(){
     setlocale(LC_ALL,"portuguese");
 
    int numero=0;
@@ -166,8 +165,6 @@ int main()
         system("pause");
         system("cls");
     }
-
-
 
    }
 

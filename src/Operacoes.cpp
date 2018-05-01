@@ -658,6 +658,7 @@ if(funcional(relacao,instancia) &&
 
 }
 bool Operacoes::total(Relacao relacao,Instancias instancia){
+    if(instancia.getUniverso().getConjuntos().size()==2){
     vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
     Conjunto conjunto = apoio[0];
     vector <int> vetorConjuntoA = conjunto.getConjunto();
@@ -674,7 +675,20 @@ bool Operacoes::total(Relacao relacao,Instancias instancia){
         }else{
             return 0;
         }
+    }else if(instancia.getUniverso().getConjuntos().size() == 3){
 
+        vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
+        Conjunto conjunto = apoio[0];
+        vector <int> vetorConjuntoA = conjunto.getConjunto();
+
+        vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
+        Conjunto conjunto2 = apoio2[1];
+        vector <int> vetorConjuntoB = conjunto2.getConjunto();
+
+        vector <Conjunto> apoio3 = instancia.getUniverso().getConjuntos();
+        Conjunto conjunto3 = apoio3[1];
+        vector <int> vetorConjuntoC = conjunto3.getConjunto();
+    }
     }
 bool Operacoes::sobrejetora(Relacao relacao,Instancias instancia){
         vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
