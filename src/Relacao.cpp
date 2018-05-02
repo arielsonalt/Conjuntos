@@ -30,7 +30,7 @@ void Relacao::setImagem(int numero)
 {
     imagem.push_back(numero);
 }
-vector Relacao::getDominio2()
+vector <int> Relacao::getDominio2()
 {
     return dominio2;
 }
@@ -40,12 +40,12 @@ void Relacao::setDominio2(int numero)
     dominio2.push_back(numero);
 }
 
-vector Relacao::getImagem2(int numero)
+vector <int> Relacao::getImagem2()
 {
     return imagem2;
 }
 
-void Relacao::setImagem2(int)
+void Relacao::setImagem2(int numero)
 {
     imagem2.push_back(numero);
 }

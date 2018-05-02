@@ -25,6 +25,7 @@ class Operacoes
         static bool injetora(Relacao, Instancias);
         static bool total(Relacao, Instancias);
         static bool sobrejetora(Relacao, Instancias);
+        static void dominioImagemSoR(Relacao);
 
 };
 

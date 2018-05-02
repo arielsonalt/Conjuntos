@@ -160,16 +160,21 @@ void Operacoes::criarRelacao(vector<int>, vector<int>){
 
 }
 void Operacoes::menorQue(Instancias instancia){
+
+    // SE HOUVER DOIS CONJUNTOS NÃO SERÁ RELAÇÃO COMPOSTA
     if(instancia.getUniverso().getConjuntos().size() == 2){
-        vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
+
+    // CRIANDO OS CONJUNTOS;
+    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
     Conjunto conjunto = apoio[0];
     vector <int> vetorConjuntoA = conjunto.getConjunto();
-
 
     vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
     Conjunto conjunto2 = apoio2[1];
     vector <int> vetorConjuntoB = conjunto2.getConjunto();
+
     Relacao relacao;
+    //CRIANDO A RELAÇÃO MENOR QUE
     for(unsigned int i=0; i<vetorConjuntoA.size();i++){
         for(unsigned int j=0;j<vetorConjuntoB.size();j++){
             if(vetorConjuntoA[i] < vetorConjuntoB[j]){
@@ -179,6 +184,7 @@ void Operacoes::menorQue(Instancias instancia){
         }
     }
 
+    // IMPRISSÃO DO CONJUNTO DOMINIO E IMAGEM
     vector <int> conjuntoD = relacao.getDominio();
     vector <int> conjuntoI = relacao.getImagem();
     cout<<"Conjunto Dommínio"<<endl;
@@ -224,6 +230,7 @@ void Operacoes::menorQue(Instancias instancia){
     }
     cout<<"} "<<endl;
 
+    // IMPRESSÃO DOS PARES DA RELAÇÃO
     cout<<"R: {";
     for(unsigned int i=0;i< conjuntoD.size();i++){
         cout<<"<"<<conjuntoD[i]<<","<<conjuntoI[i]<<">";
@@ -232,9 +239,50 @@ void Operacoes::menorQue(Instancias instancia){
         }
     }
     cout<<"}"<<endl;
+
+    //CLASSIFICAÇÃO DA RELAÇÃO
+
     classificarRelacao(relacao,instancia);
+
+
+
     }else if(instancia.getUniverso().getConjuntos().size() == 3){
 
+    //CRIAÇÃO DOS TRÊS CONJUNTOS UTILIZADOS PARA A RELAÇÃO COMPOSTA
+    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
+    Conjunto conjunto = apoio[0];
+    vector <int> vetorConjuntoA = conjunto.getConjunto();
+
+    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
+    Conjunto conjunto2 = apoio2[1];
+    vector <int> vetorConjuntoB = conjunto2.getConjunto();
+
+    vector <Conjunto> apoio3 = instancia.getUniverso().getConjuntos();
+    Conjunto conjunto3 = apoio3[2];
+    vector <int> vetorConjuntoC = conjunto3.getConjunto();
+    Relacao relacao;
+
+     for(unsigned int i=0; i<vetorConjuntoA.size();i++){
+            for(unsigned int j=0;j<vetorConjuntoB.size();j++){
+                if(vetorConjuntoA[i] < vetorConjuntoB[j]){
+                    relacao.setDominio(vetorConjuntoA[i]);
+                    relacao.setImagem(vetorConjuntoB[j]);
+                }
+            }
+        }
+
+        for(unsigned int i=0; i<vetorConjuntoB.size();i++){
+            for(unsigned int j=0;j<vetorConjuntoC.size();j++){
+                if(vetorConjuntoB[i] < vetorConjuntoC[j]){
+                    relacao.setDominio2(vetorConjuntoB[i]);
+                    relacao.setImagem2(vetorConjuntoC[j]);
+                }
+            }
+        }
+
+
+    // DOMINIO E EIMAGEM DE SoR
+       dominioImagemSoR(relacao);
     }
 
 }
@@ -460,7 +508,6 @@ void Operacoes::serRaizQuadradaDe(Instancias instancia){
     vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
     Conjunto conjunto = apoio[0];
     vector <int> vetorConjuntoA = conjunto.getConjunto();
-
 
     vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
     Conjunto conjunto2 = apoio2[1];
@@ -773,3 +820,72 @@ bool Operacoes::funcional(Relacao relacao,Instancias instancia){
             return 0;
         }
     }
+void Operacoes::dominioImagemSoR(Relacao relacao){
+        vector <int> conjuntoD = relacao.getDominio();
+        vector <int> conjuntoI = relacao.getImagem();
+        vector <int> conjuntoD2 = relacao.getDominio2();
+        vector <int> conjuntoI2 = relacao.getImagem2();
+
+        vector <int> dominio_RoS;
+        vector <int> imagem_RoS;
+        for(unsigned int i=0; i<conjuntoD.size();i++){
+            // Se o elemento de conjuntoI for igual ao
+            //elemento que está em conjuntoD2 o elemento da imagem
+            //será o elemento de conjuntoI2 de mesmo indice.
+            for(unsigned int j=0; j<conjuntoI.size();j++){
+               if(conjuntoI[i] == conjuntoD2[j]){
+                    dominio_RoS.push_back(conjuntoD[i]);
+                    imagem_RoS.push_back(conjuntoI2[j]);
+                }
+            }
+        }
+
+        //IMPRESSAO DOS PARES DE SoR;
+        cout<<"SoR: {";
+        for(unsigned int k=0;k < dominio_RoS.size();k++){
+            cout<<"<"<<dominio_RoS[k]<<","<<imagem_RoS[k]<<">";
+            if(k<dominio_RoS.size()-1){cout<<",";}
+        }
+        cout<<"}";
+
+        //IMPRESSÃO DO DOMINIO E IMAGEM
+        dominio_RoS.clear();
+        imagem_RoS.clear();
+                for(unsigned int i=0; i<conjuntoD.size();i++){
+            // Se o elemento de conjuntoI for igual ao
+            //elemento que está em conjuntoD2 o elemento da imagem
+            //será o elemento de conjuntoI2 de mesmo indice.
+            for(unsigned int j=0; j<conjuntoD.size();j++){
+               if(conjuntoI[i] == conjuntoD2[j]){
+                    int num = conjuntoD[i];
+                    vector<int>::iterator it;
+                    it = find(dominio_RoS.begin(), dominio_RoS.end(),num);
+                    if(it == dominio_RoS.end()){
+                        dominio_RoS.push_back(conjuntoD[i]);
+                    }
+                    num = conjuntoI2[j];
+                    it = find(imagem_RoS.begin(), imagem_RoS.end(),num);
+                    if(it == imagem_RoS.end()){
+                        imagem_RoS.push_back(conjuntoI2[j]);
+                    }
+
+                }
+            }
+        }
+        cout<<"Domínio: "<<endl;
+        cout<<"Dominio de RoS ={";
+        vector <int> apoio;
+        for(unsigned int k=0;k < dominio_RoS.size();k++){
+            cout<<dominio_RoS[k];
+            if(k<dominio_RoS.size()-1){cout<<",";}
+        }
+        cout<<"}"<<endl;
+        cout<<"Imagem de RoS ={";
+        for(unsigned int k=0;k < imagem_RoS.size();k++){
+            cout<<imagem_RoS[k];
+            if(k<imagem_RoS.size()-1){cout<<",";}
+        }
+        cout<<"}";
+
+        //********************************************
+}
