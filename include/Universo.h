@@ -9,17 +9,17 @@ using namespace std;
 
 class Universo
 {
-    private:
-        string nome = "Universo";
-        vector <Conjunto> conjuntos;
-        vector <Numero> numeros;
-    public:
-        Universo();
-        vector <Conjunto> getConjuntos();
-        vector <Numero> getNumeros();
-        void setConjuto(Conjunto);
-        void setNumero(Numero);
-        string getNome();
+private:
+    string nome = "Universo";
+    vector <Conjunto> conjuntos;
+    vector <Numero> numeros;
+public:
+    Universo();
+    vector <Conjunto> getConjuntos();
+    vector <Numero> getNumeros();
+    void setConjuto(Conjunto);
+    void setNumero(Numero);
+    string getNome();
 
 };
 

@@ -2,98 +2,93 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="include\Operacoes.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Conjunto.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1047" topLine="13" />
+			<Cursor1 position="138" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Elemento.cpp" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="7885" topLine="21" />
+			<Cursor1 position="173" topLine="0" />
 		</Cursor>
-		<Folding>
-			<Collapse line="28" />
-			<Collapse line="37" />
-		</Folding>
 	</File>
-	<File name="include\Numero.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Relacao.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="338" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Operacoes.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1201" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="include\Universo.h" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="452" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12678" topLine="424" />
+		</Cursor>
+	</File>
+	<File name="src\Conjunto.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="186" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Instancias.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="271" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Numero.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="181" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\Universo.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="554" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="src\Elemento.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="236" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\Instancias.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="823" topLine="21" />
-		</Cursor>
-	</File>
-	<File name="src\Universo.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="192" topLine="7" />
-		</Cursor>
-	</File>
-	<File name="src\Numero.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="264" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\Conjunto.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="321" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\Elemento.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Elemento.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="266" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Conjunto.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Operacoes.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="186" topLine="4" />
+			<Cursor1 position="11834" topLine="164" />
+		</Cursor>
+		<Folding>
+			<Collapse line="21" />
+			<Collapse line="114" />
+			<Collapse line="140" />
+			<Collapse line="181" />
+			<Collapse line="194" />
+			<Collapse line="198" />
+			<Collapse line="217" />
+			<Collapse line="234" />
+			<Collapse line="252" />
+			<Collapse line="268" />
+			<Collapse line="284" />
+			<Collapse line="305" />
+		</Folding>
+	</File>
+	<File name="src\Numero.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="264" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\Instancias.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Instancias.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="273" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Relacao.cpp" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Relacao.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="590" topLine="32" />
+			<Cursor1 position="328" topLine="17" />
 		</Cursor>
 	</File>
-	<File name="src\Operacoes.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Universo.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6822" topLine="96" />
-		</Cursor>
-		<Folding>
-			<Collapse line="20" />
-			<Collapse line="49" />
-			<Collapse line="95" />
-			<Collapse line="118" />
-			<Collapse line="149" />
-			<Collapse line="158" />
-			<Collapse line="240" />
-			<Collapse line="312" />
-			<Collapse line="386" />
-			<Collapse line="458" />
-			<Collapse line="530" />
-			<Collapse line="620" />
-			<Collapse line="664" />
-		</Folding>
-	</File>
-	<File name="include\Relacao.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="532" topLine="8" />
+			<Cursor1 position="192" topLine="18" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

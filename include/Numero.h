@@ -7,12 +7,12 @@
 
 class Numero: public Elemento
 {
-    private:
-        int numero;
-    public:
-        Numero();
-        int getNumero();
-        void setNumero(int);
+private:
+    int numero;
+public:
+    Numero();
+    int getNumero();
+    void setNumero(int);
 };
 
 #endif // NUMERO_H

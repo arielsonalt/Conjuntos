@@ -8,12 +8,12 @@ using namespace std;
 
 class Conjunto: public Elemento
 {
-    private:
-        vector <int> conjunto;
-    public:
-        Conjunto();
-        vector <int> getConjunto();
-        void setConjunto(int);
+private:
+    vector <int> conjunto;
+public:
+    Conjunto();
+    vector <int> getConjunto();
+    void setConjunto(int);
 };
 
 #endif // CONJUNTO_H

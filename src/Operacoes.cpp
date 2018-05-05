@@ -18,36 +18,45 @@ Operacoes::Operacoes()
 
 }
 
-void Operacoes::uniao(Instancias i){
+void Operacoes::uniao(Instancias i)
+{
 
     vector <int> uniao;
 
     vector <Conjunto> conjuntos = i.getUniverso().getConjuntos();
 
-    for(unsigned int i=0; i<conjuntos.size();i++){
+    for(unsigned int i=0; i<conjuntos.size(); i++)
+    {
 
-            Conjunto c = conjuntos[i];
-             vector <int> conjunto = c.getConjunto();
-        for(unsigned int j=0;j<conjunto.size();j++){
+        Conjunto c = conjuntos[i];
+        vector <int> conjunto = c.getConjunto();
+        for(unsigned int j=0; j<conjunto.size(); j++)
+        {
             vector<int>::iterator it;
             int num = conjunto[j];
             it = find(uniao.begin(), uniao.end(),num);
-            if(it == uniao.end()){
+            if(it == uniao.end())
+            {
                 uniao.push_back(conjunto[j]);
             }
         }
     }
     cout<<"          A uniao dos comjuntos e: {";
 
-    for(unsigned int k=0; k<uniao.size();k++){
-        if(k != 0 && k != uniao.size()){cout<<",";}
+    for(unsigned int k=0; k<uniao.size(); k++)
+    {
+        if(k != 0 && k != uniao.size())
+        {
+            cout<<",";
+        }
         cout<<uniao[k];
     }
     cout<<"}"<<endl;
     cout<<endl;
 
 }
-void Operacoes::intersecao(Instancias i){
+void Operacoes::intersecao(Instancias i)
+{
     setlocale(LC_ALL,"portuguese");
     vector <int> intersecao;
 
@@ -56,36 +65,45 @@ void Operacoes::intersecao(Instancias i){
     int cont=0;
     int apoio=0;
     int numero;
-    for(unsigned int i=0; i<conjuntos.size();i++){
-            Conjunto c = conjuntos[i];
-             vector <int> conjunto = c.getConjunto();
+    for(unsigned int i=0; i<conjuntos.size(); i++)
+    {
+        Conjunto c = conjuntos[i];
+        vector <int> conjunto = c.getConjunto();
 
-        for(unsigned int j=0;j<conjunto.size();j++){
-                apoio=0;
-                cont=0;
-                numero = conjunto[j];
-            for(unsigned int l=0; l < conjuntos.size();l++){
+        for(unsigned int j=0; j<conjunto.size(); j++)
+        {
+            apoio=0;
+            cont=0;
+            numero = conjunto[j];
+            for(unsigned int l=0; l < conjuntos.size(); l++)
+            {
                 Conjunto c2 = conjuntos[l];
                 vector <int> conjunto2 = c2.getConjunto();
-                    vector<int>::iterator it;
-                    int num = conjunto[j];
-                    it = find(conjunto2.begin(), conjunto2.end(),num);
-                    vector<int>::iterator it2;
-                    it2 = find(intersecao.begin(), intersecao.end(),num);
-                    if(it != conjunto2.end() && it2 == intersecao.end()){
-                        cont++;
-                        apoio++;
-                    }
+                vector<int>::iterator it;
+                int num = conjunto[j];
+                it = find(conjunto2.begin(), conjunto2.end(),num);
+                vector<int>::iterator it2;
+                it2 = find(intersecao.begin(), intersecao.end(),num);
+                if(it != conjunto2.end() && it2 == intersecao.end())
+                {
+                    cont++;
+                    apoio++;
+                }
             }
-            if(apoio == total){
-            intersecao.push_back(numero);
+            if(apoio == total)
+            {
+                intersecao.push_back(numero);
             }
         }
 
     }
     cout<<"                     A INTERSECAO DOS CONJUNTOS E: {";
-    for(unsigned int k=0; k<intersecao.size();k++){
-        if(k != 0 && k != intersecao.size()){cout<<",";}
+    for(unsigned int k=0; k<intersecao.size(); k++)
+    {
+        if(k != 0 && k != intersecao.size())
+        {
+            cout<<",";
+        }
         cout<<intersecao[k];
 
     }
@@ -93,7 +111,8 @@ void Operacoes::intersecao(Instancias i){
     cout<<endl;
 
 }
-void Operacoes::produtoCartesiano(Instancias i){
+void Operacoes::produtoCartesiano(Instancias i)
+{
 
     setlocale(LC_ALL,"portuguese");
 
@@ -106,628 +125,251 @@ void Operacoes::produtoCartesiano(Instancias i){
     vector <int> vetorConjunto2 = conjunto2.getConjunto();
 
     cout<<"O PRODUTO CARTESIANO ENTRE O PRIMEIRO E O SEGUNDO CONJUNTO E: ";
-    for(unsigned int i =0 ; i<vetorConjunto.size();i++){
+    for(unsigned int i =0 ; i<vetorConjunto.size(); i++)
+    {
 
-                cout<<endl;
+        cout<<endl;
 
-        for(unsigned int j=0; j<vetorConjunto2.size();j++){
+        for(unsigned int j=0; j<vetorConjunto2.size(); j++)
+        {
             cout<<" {"<<vetorConjunto[i]<<","<<vetorConjunto2[j]<<"}";
         }
     }
     cout<<endl;
 }
-bool Operacoes::pertence(vector <int> a, vector<int> b){
+bool Operacoes::pertence(vector <int> a, vector<int> b)
+{
     setlocale(LC_ALL,"portuguese");
     int tamanhoVetorA = a.size();
     int tamanhoVetorB = b.size();
 
     int contador1=0;
     int contador2=0;
-    for(unsigned int i=0;i<a.size();i++){
-        for(unsigned int j=0;j<b.size();j++){
-            if(a[i] == b[j]){
+    for(unsigned int i=0; i<a.size(); i++)
+    {
+        for(unsigned int j=0; j<b.size(); j++)
+        {
+            if(a[i] == b[j])
+            {
                 contador1++;
             }
         }
     }
 
-    if(b[1] == '-'){
-      for(unsigned int j=0;j<a.size();j++){
-            if(a[j] == b[0]){
+    if(b[1] == '-')
+    {
+        for(unsigned int j=0; j<a.size(); j++)
+        {
+            if(a[j] == b[0])
+            {
                 return 1;
             }
-    }
-    return 0;
+        }
+        return 0;
     }
 
-    if(contador1 == tamanhoVetorA ){
+    if(contador1 == tamanhoVetorA )
+    {
         return 1;
-    }else{
+    }
+    else
+    {
         return 0;
     }
 
 }
-bool Operacoes::contidoPropriamente(vector <int> a, vector <int> b){
+bool Operacoes::contidoPropriamente(vector <int> a, vector <int> b)
+{
     setlocale(LC_ALL,"portuguese");
 
-    if(pertence(a,b) && (b.size()!= a.size())){
+    if(pertence(a,b) && (b.size()!= a.size()))
+    {
         return 1;
-    }else{
+    }
+    else
+    {
         return 0;
     }
 }
-void Operacoes::criarRelacao(vector<int>, vector<int>){
+void Operacoes::criarRelacao(vector<int>, vector<int>)
+{
 
 }
-void Operacoes::menorQue(Instancias instancia){
-
-    // SE HOUVER DOIS CONJUNTOS NÃO SERÁ RELAÇÃO COMPOSTA
-    if(instancia.getUniverso().getConjuntos().size() == 2){
-
-    // CRIANDO OS CONJUNTOS;
-    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto = apoio[0];
-    vector <int> vetorConjuntoA = conjunto.getConjunto();
-
-    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto2 = apoio2[1];
-    vector <int> vetorConjuntoB = conjunto2.getConjunto();
-
+Relacao Operacoes::menorQue(vector <int> vetorConjuntoA, vector <int> vetorConjuntoB)
+{
     Relacao relacao;
     //CRIANDO A RELAÇÃO MENOR QUE
-    for(unsigned int i=0; i<vetorConjuntoA.size();i++){
-        for(unsigned int j=0;j<vetorConjuntoB.size();j++){
-            if(vetorConjuntoA[i] < vetorConjuntoB[j]){
+    for(unsigned int i=0; i<vetorConjuntoA.size(); i++)
+    {
+        for(unsigned int j=0; j<vetorConjuntoB.size(); j++)
+        {
+            if(vetorConjuntoA[i] < vetorConjuntoB[j])
+            {
                 relacao.setDominio(vetorConjuntoA[i]);
                 relacao.setImagem(vetorConjuntoB[j]);
             }
         }
     }
 
-    // IMPRISSÃO DO CONJUNTO DOMINIO E IMAGEM
-    vector <int> conjuntoD = relacao.getDominio();
-    vector <int> conjuntoI = relacao.getImagem();
-    cout<<"Conjunto Dommínio"<<endl;
-    cout<<"A ={";
-    vector <int> apoio3;
-    for(unsigned int i=0;i< conjuntoD.size();i++){
-            int cont=0;
-
-        for(unsigned int j=0;j<apoio3.size();j++){
-            if(conjuntoD[i] == apoio3[j]){
-                cont++;
-            }
-        }
-        if(cont==0){
-            apoio3.push_back(conjuntoD[i]);
-        }
-    }
-    for(unsigned int k=0;k < apoio3.size();k++){
-        cout<<apoio3[k];
-        if(k<apoio3.size()-1){cout<<",";}
-    }
-    cout<<"} "<<endl;
-
-
-    cout<<"Conjunto Imagem"<<endl;
-    cout<<"B ={";
-    vector <int> apoio4;
-    for(unsigned int i=0;i< conjuntoI.size();i++){
-            int cont=0;
-
-        for(unsigned int j=0;j<apoio4.size();j++){
-            if(conjuntoI[i] == apoio4[j]){
-                cont++;
-            }
-        }
-        if(cont==0){
-            apoio4.push_back(conjuntoI[i]);
-        }
-    }
-    for(unsigned int k=0;k < apoio4.size();k++){
-        cout<<apoio4[k];
-        if(k<apoio4.size()-1){cout<<",";}
-    }
-    cout<<"} "<<endl;
-
-    // IMPRESSÃO DOS PARES DA RELAÇÃO
-    cout<<"R: {";
-    for(unsigned int i=0;i< conjuntoD.size();i++){
-        cout<<"<"<<conjuntoD[i]<<","<<conjuntoI[i]<<">";
-        if(i != conjuntoD.size()-1){
-            cout<<",";
-        }
-    }
-    cout<<"}"<<endl;
-
-    //CLASSIFICAÇÃO DA RELAÇÃO
-
-    classificarRelacao(relacao,instancia);
-
-
-
-    }else if(instancia.getUniverso().getConjuntos().size() == 3){
-
-    //CRIAÇÃO DOS TRÊS CONJUNTOS UTILIZADOS PARA A RELAÇÃO COMPOSTA
-    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto = apoio[0];
-    vector <int> vetorConjuntoA = conjunto.getConjunto();
-
-    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto2 = apoio2[1];
-    vector <int> vetorConjuntoB = conjunto2.getConjunto();
-
-    vector <Conjunto> apoio3 = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto3 = apoio3[2];
-    vector <int> vetorConjuntoC = conjunto3.getConjunto();
-    Relacao relacao;
-
-     for(unsigned int i=0; i<vetorConjuntoA.size();i++){
-            for(unsigned int j=0;j<vetorConjuntoB.size();j++){
-                if(vetorConjuntoA[i] < vetorConjuntoB[j]){
-                    relacao.setDominio(vetorConjuntoA[i]);
-                    relacao.setImagem(vetorConjuntoB[j]);
-                }
-            }
-        }
-
-        for(unsigned int i=0; i<vetorConjuntoB.size();i++){
-            for(unsigned int j=0;j<vetorConjuntoC.size();j++){
-                if(vetorConjuntoB[i] < vetorConjuntoC[j]){
-                    relacao.setDominio2(vetorConjuntoB[i]);
-                    relacao.setImagem2(vetorConjuntoC[j]);
-                }
-            }
-        }
-
-
-    // DOMINIO E EIMAGEM DE SoR
-       dominioImagemSoR(relacao);
-    }
+    return relacao;
 
 }
-void Operacoes::maiorQue(Instancias instancia){
-    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto = apoio[0];
-    vector <int> vetorConjuntoA = conjunto.getConjunto();
+Relacao Operacoes::maiorQue(vector <int> vetorConjuntoA, vector <int> vetorConjuntoB)
+{
 
-
-    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto2 = apoio2[1];
-    vector <int> vetorConjuntoB = conjunto2.getConjunto();
     Relacao relacao;
-    for(unsigned int i=0; i<vetorConjuntoB.size();i++){
-        for(unsigned int j=0;j<vetorConjuntoA.size();j++){
-            if(vetorConjuntoB[i] < vetorConjuntoA[j]){
+    for(unsigned int i=0; i<vetorConjuntoB.size(); i++)
+    {
+        for(unsigned int j=0; j<vetorConjuntoA.size(); j++)
+        {
+            if(vetorConjuntoB[i] < vetorConjuntoA[j])
+            {
                 relacao.setDominio(vetorConjuntoB[i]);
                 relacao.setImagem(vetorConjuntoA[j]);
             }
         }
     }
-    vector <int> conjuntoD = relacao.getDominio();
-    vector <int> conjuntoI = relacao.getImagem();
-    cout<<"Conjunto Dommínio"<<endl;
-    cout<<"A ={";
-    vector <int> apoio3;
-    for(unsigned int i=0;i< conjuntoD.size();i++){
-            int cont=0;
-
-        for(unsigned int j=0;j<apoio3.size();j++){
-            if(conjuntoD[i] == apoio3[j]){
-                cont++;
-            }
-        }
-        if(cont==0){
-            apoio3.push_back(conjuntoD[i]);
-        }
-    }
-    for(unsigned int k=0;k < apoio3.size();k++){
-        cout<<apoio3[k];
-        if(k<apoio3.size()-1){cout<<",";}
-    }
-    cout<<"} "<<endl;
-
-
-    cout<<"Conjunto Imagem"<<endl;
-    cout<<"B ={";
-    vector <int> apoio4;
-    for(unsigned int i=0;i< conjuntoI.size();i++){
-            int cont=0;
-
-        for(unsigned int j=0;j<apoio4.size();j++){
-            if(conjuntoI[i] == apoio4[j]){
-                cont++;
-            }
-        }
-        if(cont==0){
-            apoio4.push_back(conjuntoI[i]);
-        }
-    }
-    for(unsigned int k=0;k < apoio4.size();k++){
-        cout<<apoio4[k];
-        if(k<apoio4.size()-1){cout<<",";}
-    }
-    cout<<"} "<<endl;
-   cout<<"R: {";
-    for(unsigned int i=0;i< conjuntoD.size();i++){
-        cout<<"<"<<conjuntoD[i]<<","<<conjuntoI[i]<<">";
-        if(i != conjuntoD.size()-1){
-            cout<<",";
-        }
-    }
-    cout<<"}"<<endl;
-    classificarRelacao(relacao,instancia);
+    return relacao;
 }
-void Operacoes::igualA(Instancias instancia){
-    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto = apoio[0];
-    vector <int> vetorConjuntoA = conjunto.getConjunto();
+Relacao Operacoes::igualA(vector <int> vetorConjuntoA, vector <int> vetorConjuntoB)
+{
 
-
-    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto2 = apoio2[1];
-    vector <int> vetorConjuntoB = conjunto2.getConjunto();
     Relacao relacao;
-    for(unsigned int i=0; i<vetorConjuntoA.size();i++){
-        for(unsigned int j=0;j<vetorConjuntoB.size();j++){
-            if(vetorConjuntoA[i] == vetorConjuntoB[j]){
+    for(unsigned int i=0; i<vetorConjuntoA.size(); i++)
+    {
+        for(unsigned int j=0; j<vetorConjuntoB.size(); j++)
+        {
+            if(vetorConjuntoA[i] == vetorConjuntoB[j])
+            {
                 relacao.setDominio(vetorConjuntoA[i]);
                 relacao.setImagem(vetorConjuntoB[j]);
             }
         }
     }
 
-    vector <int> conjuntoD = relacao.getDominio();
-    vector <int> conjuntoI = relacao.getImagem();
-    cout<<"Conjunto Dommínio"<<endl;
-    cout<<"A ={";
-    vector <int> apoio3;
-    for(unsigned int i=0;i< conjuntoD.size();i++){
-            int cont=0;
-
-        for(unsigned int j=0;j<apoio3.size();j++){
-            if(conjuntoD[i] == apoio3[j]){
-                cont++;
-            }
-        }
-        if(cont==0){
-            apoio3.push_back(conjuntoD[i]);
-        }
-    }
-    for(unsigned int k=0;k < apoio3.size();k++){
-        cout<<apoio3[k];
-        if(k<apoio3.size()-1){cout<<",";}
-    }
-    cout<<"} "<<endl;
-
-
-    cout<<"Conjunto Imagem"<<endl;
-    cout<<"B ={";
-    vector <int> apoio4;
-    for(unsigned int i=0;i< conjuntoI.size();i++){
-            int cont=0;
-
-        for(unsigned int j=0;j<apoio4.size();j++){
-            if(conjuntoI[i] == apoio4[j]){
-                cont++;
-            }
-        }
-        if(cont==0){
-            apoio4.push_back(conjuntoI[i]);
-        }
-    }
-    for(unsigned int k=0;k < apoio4.size();k++){
-        cout<<apoio4[k];
-        if(k<apoio4.size()-1){cout<<",";}
-    }
-    cout<<"} "<<endl;
-
-    cout<<"R: {";
-    for(unsigned int i=0;i< conjuntoD.size();i++){
-        cout<<"<"<<conjuntoD[i]<<","<<conjuntoI[i]<<">";
-        if(i != conjuntoD.size()-1){
-            cout<<",";
-        }
-    }
-    cout<<"}"<<endl;
-    classificarRelacao(relacao,instancia);
+    return relacao;
 }
-void Operacoes::serOQuadradoDe(Instancias instancia){
-    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto = apoio[0];
-    vector <int> vetorConjuntoA = conjunto.getConjunto();
-
-
-    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto2 = apoio2[1];
-    vector <int> vetorConjuntoB = conjunto2.getConjunto();
+Relacao Operacoes::serOQuadradoDe(vector <int> vetorConjuntoA, vector <int> vetorConjuntoB)
+{
     Relacao relacao;
-    for(unsigned int i=0; i<vetorConjuntoA.size();i++){
-        for(unsigned int j=0;j<vetorConjuntoB.size();j++){
-            if(sqrt(vetorConjuntoA[i]) == vetorConjuntoB[j]){
+    for(unsigned int i=0; i<vetorConjuntoA.size(); i++)
+    {
+        for(unsigned int j=0; j<vetorConjuntoB.size(); j++)
+        {
+            if(sqrt(vetorConjuntoA[i]) == vetorConjuntoB[j])
+            {
                 relacao.setDominio(vetorConjuntoA[i]);
                 relacao.setImagem(vetorConjuntoB[j]);
             }
         }
     }
-    vector <int> conjuntoD = relacao.getDominio();
-    vector <int> conjuntoI = relacao.getImagem();
-    cout<<"Conjunto Dommínio"<<endl;
-    cout<<"A ={";
-    vector <int> apoio3;
-    for(unsigned int i=0;i< conjuntoD.size();i++){
-            int cont=0;
-
-        for(unsigned int j=0;j<apoio3.size();j++){
-            if(conjuntoD[i] == apoio3[j]){
-                cont++;
-            }
-        }
-        if(cont==0){
-            apoio3.push_back(conjuntoD[i]);
-        }
-    }
-    for(unsigned int k=0;k < apoio3.size();k++){
-        cout<<apoio3[k];
-        if(k<apoio3.size()-1){cout<<",";}
-    }
-    cout<<"} "<<endl;
-
-
-    cout<<"Conjunto Imagem"<<endl;
-    cout<<"B ={";
-    vector <int> apoio4;
-    for(unsigned int i=0;i< conjuntoI.size();i++){
-            int cont=0;
-
-        for(unsigned int j=0;j<apoio4.size();j++){
-            if(conjuntoI[i] == apoio4[j]){
-                cont++;
-            }
-        }
-        if(cont==0){
-            apoio4.push_back(conjuntoI[i]);
-        }
-    }
-    for(unsigned int k=0;k < apoio4.size();k++){
-        cout<<apoio4[k];
-        if(k<apoio4.size()-1){cout<<",";}
-    }
-    cout<<"} "<<endl;
-   cout<<"R: {";
-    for(unsigned int i=0;i< conjuntoD.size();i++){
-        cout<<"<"<<conjuntoD[i]<<","<<conjuntoI[i]<<">";
-        if(i != conjuntoD.size()-1){
-            cout<<",";
-        }
-    }
-    cout<<"}"<<endl;
-    classificarRelacao(relacao,instancia);
+    return relacao;
 }
-void Operacoes::serRaizQuadradaDe(Instancias instancia){
-    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto = apoio[0];
-    vector <int> vetorConjuntoA = conjunto.getConjunto();
-
-    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto2 = apoio2[1];
-    vector <int> vetorConjuntoB = conjunto2.getConjunto();
+Relacao Operacoes::serRaizQuadradaDe(vector <int> vetorConjuntoA, vector <int> vetorConjuntoB)
+{
     Relacao relacao;
-    for(unsigned int i=0; i<vetorConjuntoA.size();i++){
-        for(unsigned int j=0;j<vetorConjuntoB.size();j++){
-            if(vetorConjuntoA[i] == sqrt(vetorConjuntoB[j])){
+    for(unsigned int i=0; i<vetorConjuntoA.size(); i++)
+    {
+        for(unsigned int j=0; j<vetorConjuntoB.size(); j++)
+        {
+            if(vetorConjuntoA[i] == sqrt(vetorConjuntoB[j]))
+            {
                 relacao.setDominio(vetorConjuntoA[i]);
                 relacao.setImagem(vetorConjuntoB[j]);
             }
         }
     }
-    vector <int> conjuntoD = relacao.getDominio();
-    vector <int> conjuntoI = relacao.getImagem();
-    cout<<"Conjunto Dommínio"<<endl;
-    cout<<"A ={";
-    vector <int> apoio3;
-    for(unsigned int i=0;i< conjuntoD.size();i++){
-            int cont=0;
-
-        for(unsigned int j=0;j<apoio3.size();j++){
-            if(conjuntoD[i] == apoio3[j]){
-                cont++;
-            }
-        }
-        if(cont==0){
-            apoio3.push_back(conjuntoD[i]);
-        }
-    }
-    for(unsigned int k=0;k < apoio3.size();k++){
-        cout<<apoio3[k];
-        if(k<apoio3.size()-1){cout<<",";}
-    }
-    cout<<"} "<<endl;
-
-
-    cout<<"Conjunto Imagem"<<endl;
-    cout<<"B ={";
-    vector <int> apoio4;
-    for(unsigned int i=0;i< conjuntoI.size();i++){
-            int cont=0;
-
-        for(unsigned int j=0;j<apoio4.size();j++){
-            if(conjuntoI[i] == apoio4[j]){
-                cont++;
-            }
-        }
-        if(cont==0){
-            apoio4.push_back(conjuntoI[i]);
-        }
-    }
-    for(unsigned int k=0;k < apoio4.size();k++){
-        cout<<apoio4[k];
-        if(k<apoio4.size()-1){cout<<",";}
-    }
-    cout<<"} "<<endl;
-    cout<<"R: {";
-    for(unsigned int i=0;i< conjuntoD.size();i++){
-        cout<<"<"<<conjuntoD[i]<<","<<conjuntoI[i]<<">";
-        if(i != conjuntoD.size()-1){
-            cout<<",";
-        }
-    }
-    cout<<"}"<<endl;
-    classificarRelacao(relacao,instancia);
+    return relacao;
 }
-void Operacoes::relacaoDoUsuario(Instancias instancia){
+Relacao Operacoes::relacaoDoUsuario(vector <int> vetorConjuntoA, vector <int> vetorConjuntoB)
+{
     char sair;
-    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto = apoio[0];
-    vector <int> vetorConjuntoA = conjunto.getConjunto();
-
-    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto2 = apoio2[1];
-    vector <int> vetorConjuntoB = conjunto2.getConjunto();
-
-    cout<<"Conjunto A"<<endl;
-    for(unsigned int i=0;i<vetorConjuntoA.size();i++){
-        cout<<"Posicão ["<<i<<"]"<<" = "<<vetorConjuntoA[i]<<endl;
-    }
-    cout<<"Conjunto B"<<endl;
-    for(unsigned int j=0;j<vetorConjuntoB.size();j++){
-        cout<<"Posicão ["<<j<<"]"<<" = "<<vetorConjuntoB[j]<<endl;
-    }
-
-
     Relacao relacao;
- while(sair != 's'){
-    int numA,numB;
-    cout<<"Digite a posição do elemento pertencenta ao conjunto A: "<<endl;
-    cout<<"Posição A: ";cin>>numA;
-    cout<<"Digite a posição do elemento pertencenta ao conjunto B: "<<endl;
-    cout<<"Posição B: ";cin>>numB;
-    relacao.setDominio(vetorConjuntoA[numA]);
-    relacao.setImagem(vetorConjuntoB[numB]);
-    cout<<"sair? s/n"<<endl;
-    cin>>sair;
+    while(sair != 's')
+    {
+        int numA,numB;
+        cout<<"Digite a posição do elemento pertencenta ao conjunto A: "<<endl;
+        cout<<"Posição A: ";
+        cin>>numA;
+        cout<<"Digite a posição do elemento pertencenta ao conjunto B: "<<endl;
+        cout<<"Posição B: ";
+        cin>>numB;
+        relacao.setDominio(vetorConjuntoA[numA]);
+        relacao.setImagem(vetorConjuntoB[numB]);
+        cout<<"sair? s/n"<<endl;
+        cin>>sair;
 
- }
-
-
-    vector <int> conjuntoD = relacao.getDominio();
-    vector <int> conjuntoI = relacao.getImagem();
-    cout<<"Conjunto Dommínio"<<endl;
-    cout<<"A ={";
-    vector <int> apoio3;
-    for(unsigned int i=0;i< conjuntoD.size();i++){
-            int cont=0;
-
-        for(unsigned int j=0;j<apoio3.size();j++){
-            if(conjuntoD[i] == apoio3[j]){
-                cont++;
-            }
-        }
-        if(cont==0){
-            apoio3.push_back(conjuntoD[i]);
-        }
     }
-    for(unsigned int k=0;k < apoio3.size();k++){
-        cout<<apoio3[k];
-        if(k<apoio3.size()-1){cout<<",";}
+    return relacao;
+}
+void Operacoes::classificarRelacao(Relacao relacao, Instancias instancia )
+{
+
+    if(funcional(relacao,instancia))
+    {
+        cout<<"É funcional"<<endl;
     }
-    cout<<"} "<<endl;
-
-
-    cout<<"Conjunto Imagem"<<endl;
-    cout<<"B ={";
-    vector <int> apoio4;
-    for(unsigned int i=0;i< conjuntoI.size();i++){
-            int cont=0;
-
-        for(unsigned int j=0;j<apoio4.size();j++){
-            if(conjuntoI[i] == apoio4[j]){
-                cont++;
-            }
-        }
-        if(cont==0){
-            apoio4.push_back(conjuntoI[i]);
-        }
+    else
+    {
+        cout<<"Não é funcional"<<endl;
     }
-    for(unsigned int k=0;k < apoio4.size();k++){
-        cout<<apoio4[k];
-        if(k<apoio4.size()-1){cout<<",";}
+    if(injetora(relacao,instancia))
+    {
+        cout<<"É injetora"<<endl;
     }
-    cout<<"} "<<endl;
-
-    cout<<"R: {";
-    for(unsigned int i=0;i< conjuntoD.size();i++){
-        cout<<"<"<<conjuntoD[i]<<","<<conjuntoI[i]<<">";
-        if(i != conjuntoD.size()-1){
-            cout<<",";
-        }
+    else
+    {
+        cout<<"Não é injetora"<<endl;
     }
-    cout<<"}"<<endl;
-   classificarRelacao(relacao,instancia);
-}
-void Operacoes::classificarRelacao(Relacao relacao, Instancias instancia ){
+    if(total(relacao,instancia))
+    {
+        cout<<"É total"<<endl;
+    }
+    else
+    {
+        cout<<"Não é Total"<<endl;
+    }
+    if(sobrejetora(relacao,instancia))
+    {
+        cout<<"É sobrejetora"<<endl;
+    }
+    else
+    {
+        cout<<"Não é sobrejetora"<<endl;
+    }
 
-if(funcional(relacao,instancia)){
-    cout<<"É funcional"<<endl;
-}else{
-    cout<<"Não é funcional"<<endl;
-}
-if(injetora(relacao,instancia)){
-    cout<<"É injetora"<<endl;
-}else{
-    cout<<"Não é injetora"<<endl;
-}
-if(total(relacao,instancia)){
-    cout<<"É total"<<endl;
-}else{
-    cout<<"Não é Total"<<endl;
-}
-if(sobrejetora(relacao,instancia)){
-    cout<<"É sobrejetora"<<endl;
-}else{
-    cout<<"Não é sobrejetora"<<endl;
-}
+    if(total(relacao,instancia) && injetora(relacao,instancia))
+    {
+        cout<<"É monorrelação"<<endl;
+    }
+    else
+    {
+        cout<<"Não é monorrelação"<<endl;
+    }
 
-if(total(relacao,instancia) && injetora(relacao,instancia)){
-    cout<<"É monorrelação"<<endl;
-}else{
-    cout<<"Não é monorrelação"<<endl;
-}
-
-if(funcional(relacao,instancia) && sobrejetora(relacao,instancia)){
-    cout<<"É epirrelação"<<endl;
-}else{
-    cout<<"Não é epirrelação"<<endl;
-}
-if(funcional(relacao,instancia) &&
-   sobrejetora(relacao,instancia) &&
-   total(relacao,instancia) &&
-   injetora(relacao,instancia)){
-    cout<<"É isorrelação"<<endl;
-}else{
-    cout<<"Não é isorrelação"<<endl;
-}
+    if(funcional(relacao,instancia) && sobrejetora(relacao,instancia))
+    {
+        cout<<"É epirrelação"<<endl;
+    }
+    else
+    {
+        cout<<"Não é epirrelação"<<endl;
+    }
+    if(funcional(relacao,instancia) &&
+            sobrejetora(relacao,instancia) &&
+            total(relacao,instancia) &&
+            injetora(relacao,instancia))
+    {
+        cout<<"É isorrelação"<<endl;
+    }
+    else
+    {
+        cout<<"Não é isorrelação"<<endl;
+    }
 
 }
-bool Operacoes::total(Relacao relacao,Instancias instancia){
-    if(instancia.getUniverso().getConjuntos().size()==2){
-    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto = apoio[0];
-    vector <int> vetorConjuntoA = conjunto.getConjunto();
-
-    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto2 = apoio2[1];
-    vector <int> vetorConjuntoB = conjunto2.getConjunto();
-
-    vector <int> conjuntoD = relacao.getDominio();
-    vector <int> conjuntoI = relacao.getImagem();
-
-        if(conjuntoD.size() == vetorConjuntoA.size()){
-            return 1;
-        }else{
-            return 0;
-        }
-    }else if(instancia.getUniverso().getConjuntos().size() == 3){
+bool Operacoes::total(Relacao relacao,Instancias instancia)
+{
 
         vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
         Conjunto conjunto = apoio[0];
@@ -737,155 +379,221 @@ bool Operacoes::total(Relacao relacao,Instancias instancia){
         Conjunto conjunto2 = apoio2[1];
         vector <int> vetorConjuntoB = conjunto2.getConjunto();
 
-        vector <Conjunto> apoio3 = instancia.getUniverso().getConjuntos();
-        Conjunto conjunto3 = apoio3[1];
-        vector <int> vetorConjuntoC = conjunto3.getConjunto();
-    }
-    }
-bool Operacoes::sobrejetora(Relacao relacao,Instancias instancia){
-        vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto = apoio[0];
-    vector <int> vetorConjuntoA = conjunto.getConjunto();
-
-    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto2 = apoio2[1];
-    vector <int> vetorConjuntoB = conjunto2.getConjunto();
-
-    vector <int> conjuntoD = relacao.getDominio();
-    vector <int> conjuntoI = relacao.getImagem();
-
-        if(conjuntoI.size() == vetorConjuntoB.size()){
-            return 1;
-        }else{
-            return 0;
-        }
-    }
-bool Operacoes::injetora(Relacao relacao,Instancias instancia){
-    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto = apoio[0];
-    vector <int> vetorConjuntoA = conjunto.getConjunto();
-
-
-    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto2 = apoio2[1];
-    vector <int> vetorConjuntoB = conjunto2.getConjunto();
-    vector <int> conjuntoD = relacao.getDominio();
-    vector <int> conjuntoI = relacao.getImagem();
-        vector <int> elementosPercorridos;
-        int cont;
-        for(unsigned int i=0;i< conjuntoI.size();i++){
-                cont=0;
-            for(unsigned int j=0; j<elementosPercorridos.size();j++){
-                if(conjuntoI[i] == elementosPercorridos[j]){
-                    cont++;
-                }
-            }
-            if(cont==0){
-                   elementosPercorridos.push_back(conjuntoI[i]);
-                }
-        }
-        if(elementosPercorridos.size() == vetorConjuntoB.size()){
-            return 1;
-        }else{
-            return 0;
-        }
-}
-bool Operacoes::funcional(Relacao relacao,Instancias instancia){
-    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto = apoio[0];
-    vector <int> vetorConjuntoA = conjunto.getConjunto();
-
-
-    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
-    Conjunto conjunto2 = apoio2[1];
-    vector <int> vetorConjuntoB = conjunto2.getConjunto();
-        vector <int> conjuntoD = relacao.getDominio();
-    vector <int> conjuntoI = relacao.getImagem();
-        vector <int> elementosPercorridos;
-        int cont;
-        for(unsigned int i=0;i< conjuntoD.size();i++){
-                cont=0;
-            for(unsigned int j=0; j<elementosPercorridos.size();j++){
-                if(conjuntoD[i] == elementosPercorridos[j]){
-                    cont++;
-                }
-            }
-            if(cont==0){
-                   elementosPercorridos.push_back(conjuntoD[i]);
-                }
-        }
-        if(elementosPercorridos.size() == vetorConjuntoA.size()){
-            return 1;
-        }else{
-            return 0;
-        }
-    }
-void Operacoes::dominioImagemSoR(Relacao relacao){
         vector <int> conjuntoD = relacao.getDominio();
         vector <int> conjuntoI = relacao.getImagem();
-        vector <int> conjuntoD2 = relacao.getDominio2();
-        vector <int> conjuntoI2 = relacao.getImagem2();
-
-        vector <int> dominio_RoS;
-        vector <int> imagem_RoS;
-        for(unsigned int i=0; i<conjuntoD.size();i++){
-            // Se o elemento de conjuntoI for igual ao
-            //elemento que está em conjuntoD2 o elemento da imagem
-            //será o elemento de conjuntoI2 de mesmo indice.
-            for(unsigned int j=0; j<conjuntoI.size();j++){
-               if(conjuntoI[i] == conjuntoD2[j]){
-                    dominio_RoS.push_back(conjuntoD[i]);
-                    imagem_RoS.push_back(conjuntoI2[j]);
-                }
+        vector <int> elementosPercorridos;
+        int cont;
+       for(unsigned int i=0; i< conjuntoD.size(); i++)
+        {
+        cont=0;
+        for(unsigned int j=0; j<elementosPercorridos.size(); j++)
+        {
+            if(conjuntoD[i] == elementosPercorridos[j])
+            {
+                cont++;
             }
         }
-
-        //IMPRESSAO DOS PARES DE SoR;
-        cout<<"SoR: {";
-        for(unsigned int k=0;k < dominio_RoS.size();k++){
-            cout<<"<"<<dominio_RoS[k]<<","<<imagem_RoS[k]<<">";
-            if(k<dominio_RoS.size()-1){cout<<",";}
+        if(cont==0)
+        {
+            elementosPercorridos.push_back(conjuntoD[i]);
         }
-        cout<<"}";
+    }
+    if(elementosPercorridos.size()>= vetorConjuntoB.size()){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+bool Operacoes::sobrejetora(Relacao relacao,Instancias instancia)
+{
+    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
+    Conjunto conjunto = apoio[0];
+    vector <int> vetorConjuntoA = conjunto.getConjunto();
 
-        //IMPRESSÃO DO DOMINIO E IMAGEM
-        dominio_RoS.clear();
-        imagem_RoS.clear();
-                for(unsigned int i=0; i<conjuntoD.size();i++){
-            // Se o elemento de conjuntoI for igual ao
-            //elemento que está em conjuntoD2 o elemento da imagem
-            //será o elemento de conjuntoI2 de mesmo indice.
-            for(unsigned int j=0; j<conjuntoD.size();j++){
-               if(conjuntoI[i] == conjuntoD2[j]){
-                    int num = conjuntoD[i];
-                    vector<int>::iterator it;
-                    it = find(dominio_RoS.begin(), dominio_RoS.end(),num);
-                    if(it == dominio_RoS.end()){
-                        dominio_RoS.push_back(conjuntoD[i]);
-                    }
-                    num = conjuntoI2[j];
-                    it = find(imagem_RoS.begin(), imagem_RoS.end(),num);
-                    if(it == imagem_RoS.end()){
-                        imagem_RoS.push_back(conjuntoI2[j]);
-                    }
+    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
+    Conjunto conjunto2 = apoio2[1];
+    vector <int> vetorConjuntoB = conjunto2.getConjunto();
 
-                }
+    vector <int> conjuntoD = relacao.getDominio();
+    vector <int> conjuntoI = relacao.getImagem();
+
+    vector <int> elementosPercorridos;
+        int cont;
+       for(unsigned int i=0; i< conjuntoI.size(); i++)
+        {
+        cont=0;
+        for(unsigned int j=0; j<elementosPercorridos.size(); j++)
+        {
+            if(conjuntoI[i] == elementosPercorridos[j])
+            {
+                cont++;
             }
         }
-        cout<<"Domínio: "<<endl;
-        cout<<"Dominio de RoS ={";
-        vector <int> apoio;
-        for(unsigned int k=0;k < dominio_RoS.size();k++){
-            cout<<dominio_RoS[k];
-            if(k<dominio_RoS.size()-1){cout<<",";}
+        if(cont==0)
+        {
+            elementosPercorridos.push_back(conjuntoI[i]);
         }
-        cout<<"}"<<endl;
-        cout<<"Imagem de RoS ={";
-        for(unsigned int k=0;k < imagem_RoS.size();k++){
-            cout<<imagem_RoS[k];
-            if(k<imagem_RoS.size()-1){cout<<",";}
-        }
-        cout<<"}";
+    }
+    if(elementosPercorridos.size()>= vetorConjuntoA.size()){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+bool Operacoes::injetora(Relacao relacao,Instancias instancia)
+{
+    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
+    Conjunto conjunto = apoio[0];
+    vector <int> vetorConjuntoA = conjunto.getConjunto();
 
-        //********************************************
+
+    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
+    Conjunto conjunto2 = apoio2[1];
+    vector <int> vetorConjuntoB = conjunto2.getConjunto();
+    vector <int> conjuntoD = relacao.getDominio();
+    vector <int> conjuntoI = relacao.getImagem();
+    vector <int> elementosPercorridos;
+    int cont;
+    for(unsigned int i=0; i< conjuntoI.size(); i++)
+    {
+        cont=0;
+        for(unsigned int j=0; j<elementosPercorridos.size(); j++)
+        {
+            if(conjuntoI[i] == elementosPercorridos[j])
+            {
+                cont++;
+            }
+        }
+        if(cont==0)
+        {
+            elementosPercorridos.push_back(conjuntoI[i]);
+        }else{
+            return 0;
+        }
+    }
+ return 1;
+}
+bool Operacoes::funcional(Relacao relacao,Instancias instancia)
+{
+    vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
+    Conjunto conjunto = apoio[0];
+    vector <int> vetorConjuntoA = conjunto.getConjunto();
+
+
+    vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
+    Conjunto conjunto2 = apoio2[1];
+    vector <int> vetorConjuntoB = conjunto2.getConjunto();
+    vector <int> conjuntoD = relacao.getDominio();
+    vector <int> conjuntoI = relacao.getImagem();
+    vector <int> elementosPercorridos;
+    int cont;
+    for(unsigned int i=0; i< conjuntoD.size(); i++)
+    {
+        cont=0;
+        for(unsigned int j=0; j<elementosPercorridos.size(); j++)
+        {
+            if(conjuntoD[i] == elementosPercorridos[j])
+            {
+                cont++;
+            }
+        }
+        if(cont==0)
+        {
+            elementosPercorridos.push_back(conjuntoD[i]);
+        }else{
+            return 0;
+        }
+    }
+   return 1;
+}
+Relacao Operacoes::relacaoSoR(Relacao relacaoAB, Relacao relacaoBC)
+{
+    Relacao relacaoSoR;
+
+    vector <int> conjuntoAB = relacaoAB.getImagem();
+    vector <int> conjuntoABdominio = relacaoAB.getDominio();
+    vector <int> conjuntoBCimagem = relacaoBC.getImagem();
+    for(int i=0;i<conjuntoAB.size();i++){
+      cout<<conjuntoBCimagem[i]<<endl;
+    }
+    for(int i=0;i<conjuntoAB.size();i++){
+        relacaoSoR.setDominio(conjuntoABdominio[i]);
+        relacaoSoR.setImagem(conjuntoBCimagem[i]);
+    }
+    return relacaoSoR;
+}
+void Operacoes::impressao(Relacao relacao)
+{
+    vector <int> conjuntoD = relacao.getDominio();
+    vector <int> conjuntoI = relacao.getImagem();
+    cout<<"Conjunto Dommínio"<<endl;
+    cout<<"D ={";
+    vector <int> apoio3;
+    for(unsigned int i=0; i< conjuntoD.size(); i++)
+    {
+        int cont=0;
+
+        for(unsigned int j=0; j<apoio3.size(); j++)
+        {
+            if(conjuntoD[i] == apoio3[j])
+            {
+                cont++;
+            }
+        }
+        if(cont==0)
+        {
+            apoio3.push_back(conjuntoD[i]);
+        }
+    }
+    for(unsigned int k=0; k < apoio3.size(); k++)
+    {
+        cout<<apoio3[k];
+        if(k<apoio3.size()-1)
+        {
+            cout<<",";
+        }
+    }
+    cout<<"} "<<endl;
+
+
+    cout<<"Conjunto Imagem"<<endl;
+    cout<<"I ={";
+    vector <int> apoio4;
+    for(unsigned int i=0; i< conjuntoI.size(); i++)
+    {
+        int cont=0;
+
+        for(unsigned int j=0; j<apoio4.size(); j++)
+        {
+            if(conjuntoI[i] == apoio4[j])
+            {
+                cont++;
+            }
+        }
+        if(cont==0)
+        {
+            apoio4.push_back(conjuntoI[i]);
+        }
+    }
+    for(unsigned int k=0; k < apoio4.size(); k++)
+    {
+        cout<<apoio4[k];
+        if(k<apoio4.size()-1)
+        {
+            cout<<",";
+        }
+    }
+    cout<<"} "<<endl;
+
+    // IMPRESSÃO DOS PARES DA RELAÇÃO
+    cout<<"R: {";
+    for(unsigned int i=0; i< conjuntoD.size(); i++)
+    {
+        cout<<"<"<<conjuntoD[i]<<","<<conjuntoI[i]<<">";
+        if(i != conjuntoD.size()-1)
+        {
+            cout<<",";
+        }
+    }
+    cout<<"}"<<endl;
 }

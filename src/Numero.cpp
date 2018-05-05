@@ -9,10 +9,12 @@ Numero::Numero()
     //ctor
 }
 
-int Numero::getNumero(){
+int Numero::getNumero()
+{
     return numero;
 }
-void Numero::setNumero(int a){
+void Numero::setNumero(int a)
+{
     numero = a;
 }
 

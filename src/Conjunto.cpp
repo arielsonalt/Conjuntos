@@ -10,11 +10,13 @@ Conjunto::Conjunto()
     //ctor
 }
 
-vector <int> Conjunto::getConjunto(){
+vector <int> Conjunto::getConjunto()
+{
     return conjunto;
 }
 
-void Conjunto::setConjunto(int numero){
+void Conjunto::setConjunto(int numero)
+{
     conjunto.push_back(numero);
 }
 

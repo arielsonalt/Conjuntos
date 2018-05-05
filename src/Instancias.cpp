@@ -14,12 +14,12 @@ using namespace std;
 
 namespace patch
 {
-    template < typename T > std::string to_string( const T& n )
-    {
-        std::ostringstream stm;
-        stm << n;
-        return stm.str();
-    }
+template < typename T > std::string to_string( const T& n )
+{
+    std::ostringstream stm;
+    stm << n;
+    return stm.str();
+}
 }
 
 Instancias::Instancias()
@@ -27,63 +27,79 @@ Instancias::Instancias()
     lerTxt();
 }
 
-void Instancias::setUniverso(Universo u){
+void Instancias::setUniverso(Universo u)
+{
 
     universo = u;
 }
-Universo Instancias::getUniverso(){
+Universo Instancias::getUniverso()
+{
     return universo;
 }
 
-void Instancias::lerTxt(){
+void Instancias::lerTxt()
+{
 
-vector <string> lista;
-string linha1;
+    vector <string> lista;
+    string linha1;
 
-ifstream arquivo;
-arquivo.open("DadosdeEntrada.txt");
+    ifstream arquivo;
+    arquivo.open("DadosdeEntrada.txt");
 
-while (arquivo.good()) {
-    getline(arquivo, linha1);
-    lista.push_back(linha1);
-}
+    while (arquivo.good())
+    {
+        getline(arquivo, linha1);
+        lista.push_back(linha1);
+    }
 
-Universo universo;
+    Universo universo;
 
-for(int k=0; k<lista.size();k++){
-    string linha = lista[k];
-        for(int i=0;i<linha.size();i++){
-            if(linha[i]>='A' && linha[i]<='Z'){
+    for(int k=0; k<lista.size(); k++)
+    {
+        string linha = lista[k];
+        for(int i=0; i<linha.size(); i++)
+        {
+            if(linha[i]>='A' && linha[i]<='Z')
+            {
 
                 Conjunto conjunto;
                 conjunto.setNome(patch::to_string(linha[i]));
 
                 int j = i+1;
-                while(j < linha.size()){
-                    if(linha[j] == ',' || linha[j] == '{' && linha[j] != ' '||linha[j] == '-'){
+                while(j < linha.size())
+                {
+                    if(linha[j] == ',' || linha[j] == '{' && linha[j] != ' '||linha[j] == '-')
+                    {
                         j++;
                         string carac;
-                        if(linha[j-1] == '-'){
+                        if(linha[j-1] == '-')
+                        {
                             j++;
-                            while(linha[j] != ','){
+                            while(linha[j] != ',')
+                            {
                                 carac += linha[j];
                                 j++;
                             }
                             istringstream convert(carac);
                             int Result;
-                            if ( !(convert >> Result) ){
+                            if ( !(convert >> Result) )
+                            {
                                 Result = 0;
                             }
                             conjunto.setConjunto(Result*(-1));
                             j--;
-                        }else{
-                            while(linha[j] != ','&&linha[j]!='}'){
+                        }
+                        else
+                        {
+                            while(linha[j] != ','&&linha[j]!='}')
+                            {
                                 carac += linha[j];
                                 j++;
                             }
                             istringstream convert(carac);
                             int Result;
-                            if ( !(convert >> Result) ){
+                            if ( !(convert >> Result) )
+                            {
                                 Result = 0;
                             }
                             conjunto.setConjunto(Result);
@@ -95,36 +111,45 @@ for(int k=0; k<lista.size();k++){
                 universo.setConjuto(conjunto);
             }
 
-            if(linha[i]>='a' && linha[i]<='z'){
+            if(linha[i]>='a' && linha[i]<='z')
+            {
 
                 Numero numero;
                 numero.setNome(patch::to_string(linha[i]));
 
                 int j = i+1;
                 string carac;
-                while(linha[j]!= '\0'){
+                while(linha[j]!= '\0')
+                {
 
-                    if( linha[j]!= ' ' && linha[j]!= '='){
-                        if(linha[j] == '-'){
+                    if( linha[j]!= ' ' && linha[j]!= '=')
+                    {
+                        if(linha[j] == '-')
+                        {
                             j++;
-                            while(linha[j]!= '\0'){
+                            while(linha[j]!= '\0')
+                            {
                                 carac += patch::to_string(linha[j]);
                                 j++;
                             }
                             istringstream convert(carac);
                             int Result;
-                            if ( !(convert >> Result) ){
+                            if ( !(convert >> Result) )
+                            {
                                 Result = 0;
                             }
                             numero.setNumero(Result*(-1));
                             break;
-                        }else{
+                        }
+                        else
+                        {
                             carac += patch::to_string(linha[j]);
                         }
                     }
                     istringstream convert(carac);
                     int Result;
-                    if ( !(convert >> Result) ){
+                    if ( !(convert >> Result) )
+                    {
                         Result = 0;
                     }
                     numero.setNumero(Result);

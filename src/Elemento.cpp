@@ -7,10 +7,12 @@ Elemento::Elemento()
 {
     //ctor
 }
-void Elemento::setNome(string a){
+void Elemento::setNome(string a)
+{
     nome = a;
 }
-string Elemento::getNome(){
+string Elemento::getNome()
+{
     return nome;
 }
 

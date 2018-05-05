@@ -105,28 +105,28 @@
 	<stdlib.h>
 	<stdio.h>
 
-1524250111 source:c:\users\ariel\dropbox\github\conjuntos\src\conjunto.cpp
+1525551690 source:c:\users\ariel\dropbox\github\conjuntos\src\conjunto.cpp
 	"../include/Conjunto.h"
 	"../include/Elemento.h"
 	<iostream>
 	<vector>
 	<string>
 
-1521934572 c:\users\ariel\dropbox\github\conjuntos\include\conjunto.h
+1525551689 c:\users\ariel\dropbox\github\conjuntos\include\conjunto.h
 	"../include/Elemento.h"
 	<string>
 	<vector>
 
-1521934674 c:\users\ariel\dropbox\github\conjuntos\include\elemento.h
+1525551689 c:\users\ariel\dropbox\github\conjuntos\include\elemento.h
 	<string>
 	"../include/Elemento.h"
 
-1521293107 source:c:\users\ariel\dropbox\github\conjuntos\src\elemento.cpp
+1525551690 source:c:\users\ariel\dropbox\github\conjuntos\src\elemento.cpp
 	"../include/Elemento.h"
 	<iostream>
 	<string>
 
-1521974333 source:c:\users\ariel\dropbox\github\conjuntos\src\instancias.cpp
+1525551689 source:c:\users\ariel\dropbox\github\conjuntos\src\instancias.cpp
 	"../include/Instancias.h"
 	"../include/Universo.h"
 	"../include/Conjunto.h"
@@ -140,29 +140,29 @@
 	<string>
 	<queue>
 
-1521166795 c:\users\ariel\dropbox\github\conjuntos\include\instancias.h
+1525551689 c:\users\ariel\dropbox\github\conjuntos\include\instancias.h
 	"../include/Universo.h"
 
-1521973220 c:\users\ariel\dropbox\github\conjuntos\include\universo.h
+1525551690 c:\users\ariel\dropbox\github\conjuntos\include\universo.h
 	"../include/Elemento.h"
 	"../include/Conjunto.h"
 	"../include/Numero.h"
 	<string>
 	<vector>
 
-1521934768 c:\users\ariel\dropbox\github\conjuntos\include\numero.h
+1525551689 c:\users\ariel\dropbox\github\conjuntos\include\numero.h
 	"../include/Elemento.h"
 	<iostream>
 	<string>
 
-1521934807 source:c:\users\ariel\dropbox\github\conjuntos\src\numero.cpp
+1525551689 source:c:\users\ariel\dropbox\github\conjuntos\src\numero.cpp
 	"../include/Numero.h"
 	"../include/Elemento.h"
 	<iostream>
 	<string>
 	<vector>
 
-1525187984 source:c:\users\ariel\dropbox\github\conjuntos\src\relacao.cpp
+1525523417 source:c:\users\ariel\dropbox\github\conjuntos\src\relacao.cpp
 	"Relacao.h"
 	<vector>
 	<iostream>
@@ -170,22 +170,23 @@
 	<stdlib.h>
 	<stdio.h>
 
-1525121773 c:\users\ariel\dropbox\github\conjuntos\include\relacao.h
+1525551689 c:\users\ariel\dropbox\github\conjuntos\include\relacao.h
 	<vector>
 
-1524250632 source:c:\users\ariel\dropbox\github\conjuntos\src\universo.cpp
+1525551689 source:c:\users\ariel\dropbox\github\conjuntos\src\universo.cpp
 	"../include/Universo.h"
 	"../include/Elemento.h"
 	"../include/Conjunto.h"
 	<vector>
 
-1525120643 source:c:\users\ariel\dropbox\github\conjuntos\main.cpp
+1525556839 source:c:\users\ariel\dropbox\github\conjuntos\main.cpp
 	"include/Conjunto.h"
 	"include/Elemento.h"
 	"include/Instancias.h"
 	"include/Universo.h"
 	"include/Numero.h"
 	"include/Operacoes.h"
+	"include/Relacao.h"
 	<exception>
 	<locale>
 	<stdlib.h>
@@ -193,11 +194,11 @@
 	<vector>
 	<string>
 
-1525187493 c:\users\ariel\dropbox\github\conjuntos\include\operacoes.h
+1525553358 c:\users\ariel\dropbox\github\conjuntos\include\operacoes.h
 	"../include/Instancias.h"
 	"../include/Relacao.h"
 
-1525197086 source:c:\users\ariel\dropbox\github\conjuntos\src\operacoes.cpp
+1525558112 source:c:\users\ariel\dropbox\github\conjuntos\src\operacoes.cpp
 	"../include/Operacoes.h"
 	"../include/Elemento.h"
 	"../include/Conjunto.h"
