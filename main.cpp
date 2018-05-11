@@ -264,7 +264,6 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <int> vetorConjuntoB = conjunto2.getConjunto();
 
         relacaoAB = Operacoes::menorQue(vetorConjuntoA,vetorConjuntoB);
-        system("pause");
     }
     if(numero == 2){
         vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
@@ -276,7 +275,6 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <int> vetorConjuntoB = conjunto2.getConjunto();
 
         relacaoAB = Operacoes::maiorQue(vetorConjuntoA,vetorConjuntoB);
-        system("pause");
     }
     if(numero == 3){
         vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
@@ -288,7 +286,6 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <int> vetorConjuntoB = conjunto2.getConjunto();
 
         relacaoAB = Operacoes::igualA(vetorConjuntoA,vetorConjuntoB);
-        system("pause");
     }
     if(numero == 4){
         vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
@@ -300,7 +297,6 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <int> vetorConjuntoB = conjunto2.getConjunto();
 
         relacaoAB = Operacoes::serOQuadradoDe(vetorConjuntoA,vetorConjuntoB);
-        system("pause");
 
     }
     if(numero == 5){
@@ -313,7 +309,7 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <int> vetorConjuntoB = conjunto2.getConjunto();
 
         relacaoAB = Operacoes::serRaizQuadradaDe(vetorConjuntoA,vetorConjuntoB);
-        system("pause");
+
     }
     if(numero == 6){
         vector <Conjunto> apoio = instancia.getUniverso().getConjuntos();
@@ -335,14 +331,15 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
 
         relacaoAB = Operacoes::relacaoDoUsuario(vetorConjuntoA,vetorConjuntoB);
 
-        system("pause");
+
     }
         if(numero == 7){
         break;
-        system("pause");
+
 
     }
-     cout<<"Escolha a relação para S:B->C"<<endl;
+    cout<<""<<endl;
+    cout<<"Escolha a relação para S:B->C"<<endl;
     cout<<"OPÇÃO PARA B->C: ";cin>>numero;
     if(numero == 1){
         vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
@@ -354,7 +351,6 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <int> vetorConjuntoC = conjunto.getConjunto();
 
         relacaoBC = Operacoes::menorQue(vetorConjuntoB,vetorConjuntoC);
-        system("pause");
     }
     if(numero == 2){
 
@@ -367,7 +363,6 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <int> vetorConjuntoC = conjunto.getConjunto();
 
         relacaoBC = Operacoes::maiorQue(vetorConjuntoB,vetorConjuntoC);
-        system("pause");
     }
     if(numero == 3){
         vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
@@ -379,7 +374,6 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <int> vetorConjuntoC = conjunto.getConjunto();
 
         relacaoBC = Operacoes::igualA(vetorConjuntoB,vetorConjuntoC);
-        system("pause");
     }
     if(numero == 4){
         vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
@@ -391,7 +385,6 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <int> vetorConjuntoC = conjunto.getConjunto();
 
         relacaoBC = Operacoes::serOQuadradoDe(vetorConjuntoB,vetorConjuntoC);
-        system("pause");
     }
     if(numero == 5){
         vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
@@ -403,7 +396,6 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <int> vetorConjuntoC = conjunto.getConjunto();
 
        relacaoBC = Operacoes::serRaizQuadradaDe(vetorConjuntoB,vetorConjuntoC);
-        system("pause");
     }
     if(numero == 6){
         vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
@@ -424,12 +416,11 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         }
 
         relacaoBC = Operacoes::relacaoDoUsuario(vetorConjuntoB,vetorConjuntoC);
-        system("pause");
     }
     if(numero == 7){
         break;
-        system("pause");
     }
+    cout<<""<<endl;
     Relacao relacaoSoR;
     relacaoSoR = Operacoes::relacaoSoR(relacaoAB,relacaoBC);
 
@@ -443,9 +434,10 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
     inst.setUniverso(u);
 
     Operacoes::impressao(relacaoSoR);
-
+    cout<<""<<endl;
     Operacoes::classificarRelacao(relacaoSoR,inst);
     system("pause");
+    system("cls");
 
 
 

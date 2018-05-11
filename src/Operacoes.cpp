@@ -218,14 +218,14 @@ Relacao Operacoes::maiorQue(vector <int> vetorConjuntoA, vector <int> vetorConju
 {
 
     Relacao relacao;
-    for(unsigned int i=0; i<vetorConjuntoB.size(); i++)
+    for(unsigned int i=0; i<vetorConjuntoA.size(); i++)
     {
-        for(unsigned int j=0; j<vetorConjuntoA.size(); j++)
+        for(unsigned int j=0; j<vetorConjuntoB.size(); j++)
         {
-            if(vetorConjuntoB[i] < vetorConjuntoA[j])
+            if(vetorConjuntoA[i] > vetorConjuntoB[j])
             {
-                relacao.setDominio(vetorConjuntoB[i]);
-                relacao.setImagem(vetorConjuntoA[j]);
+                relacao.setDominio(vetorConjuntoA[i]);
+                relacao.setImagem(vetorConjuntoB[j]);
             }
         }
     }
@@ -256,7 +256,8 @@ Relacao Operacoes::serOQuadradoDe(vector <int> vetorConjuntoA, vector <int> veto
     {
         for(unsigned int j=0; j<vetorConjuntoB.size(); j++)
         {
-            if(sqrt(vetorConjuntoA[i]) == vetorConjuntoB[j])
+            int raiz = (int)(sqrt(vetorConjuntoA[i]));
+            if(raiz == vetorConjuntoB[j])
             {
                 relacao.setDominio(vetorConjuntoA[i]);
                 relacao.setImagem(vetorConjuntoB[j]);
@@ -272,7 +273,8 @@ Relacao Operacoes::serRaizQuadradaDe(vector <int> vetorConjuntoA, vector <int> v
     {
         for(unsigned int j=0; j<vetorConjuntoB.size(); j++)
         {
-            if(vetorConjuntoA[i] == sqrt(vetorConjuntoB[j]))
+            int raiz = (int)(sqrt(vetorConjuntoB[j]));
+            if(vetorConjuntoA[i] == raiz)
             {
                 relacao.setDominio(vetorConjuntoA[i]);
                 relacao.setImagem(vetorConjuntoB[j]);
@@ -510,23 +512,29 @@ Relacao Operacoes::relacaoSoR(Relacao relacaoAB, Relacao relacaoBC)
 {
     Relacao relacaoSoR;
 
-    vector <int> conjuntoAB = relacaoAB.getImagem();
+    vector <int> conjuntoABimagem = relacaoAB.getImagem();
     vector <int> conjuntoABdominio = relacaoAB.getDominio();
+    vector <int> conjuntoBCdominio = relacaoBC.getDominio();
     vector <int> conjuntoBCimagem = relacaoBC.getImagem();
-    for(int i=0;i<conjuntoAB.size();i++){
-      cout<<conjuntoBCimagem[i]<<endl;
-    }
-    for(int i=0;i<conjuntoAB.size();i++){
-        relacaoSoR.setDominio(conjuntoABdominio[i]);
-        relacaoSoR.setImagem(conjuntoBCimagem[i]);
+
+    for(int i=0;i<conjuntoABimagem.size();i++){
+        for(int j=0;j<conjuntoBCdominio.size();j++){
+            if(conjuntoABimagem[i] == conjuntoBCdominio[j]){
+                relacaoSoR.setDominio(conjuntoABdominio[i]);
+                relacaoSoR.setImagem(conjuntoBCimagem[j]);
+            }
+        }
     }
     return relacaoSoR;
 }
+
 void Operacoes::impressao(Relacao relacao)
 {
     vector <int> conjuntoD = relacao.getDominio();
     vector <int> conjuntoI = relacao.getImagem();
     cout<<"Conjunto Dommínio"<<endl;
+
+
     cout<<"D ={";
     vector <int> apoio3;
     for(unsigned int i=0; i< conjuntoD.size(); i++)
@@ -555,9 +563,10 @@ void Operacoes::impressao(Relacao relacao)
     }
     cout<<"} "<<endl;
 
-
     cout<<"Conjunto Imagem"<<endl;
-    cout<<"I ={";
+
+
+ cout<<"I ={";
     vector <int> apoio4;
     for(unsigned int i=0; i< conjuntoI.size(); i++)
     {
@@ -585,12 +594,13 @@ void Operacoes::impressao(Relacao relacao)
     }
     cout<<"} "<<endl;
 
+
     // IMPRESSÃO DOS PARES DA RELAÇÃO
     cout<<"R: {";
     for(unsigned int i=0; i< conjuntoD.size(); i++)
     {
         cout<<"<"<<conjuntoD[i]<<","<<conjuntoI[i]<<">";
-        if(i != conjuntoD.size()-1)
+        if(i < conjuntoD.size()-1)
         {
             cout<<",";
         }

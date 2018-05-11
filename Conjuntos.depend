@@ -179,7 +179,7 @@
 	"../include/Conjunto.h"
 	<vector>
 
-1525556839 source:c:\users\ariel\dropbox\github\conjuntos\main.cpp
+1525728298 source:c:\users\ariel\dropbox\github\conjuntos\main.cpp
 	"include/Conjunto.h"
 	"include/Elemento.h"
 	"include/Instancias.h"
@@ -198,7 +198,7 @@
 	"../include/Instancias.h"
 	"../include/Relacao.h"
 
-1525558112 source:c:\users\ariel\dropbox\github\conjuntos\src\operacoes.cpp
+1525964335 source:c:\users\ariel\dropbox\github\conjuntos\src\operacoes.cpp
 	"../include/Operacoes.h"
 	"../include/Elemento.h"
 	"../include/Conjunto.h"
