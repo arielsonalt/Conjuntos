@@ -144,6 +144,7 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
             vector <int> vetorConjuntoB = conjunto2.getConjunto();
             Relacao relacao;
             relacao = Operacoes::menorQue(vetorConjuntoA,vetorConjuntoB);
+            Operacoes::impressao(relacao);cout<<endl;
             Operacoes::classificarRelacao(relacao,instancia);
         }
 
@@ -157,7 +158,9 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         Conjunto conjunto2 = apoio2[1];
         vector <int> vetorConjuntoB = conjunto2.getConjunto();
 
+        Operacoes::impressao(Operacoes::maiorQue(vetorConjuntoA,vetorConjuntoB));cout<<endl;
         Operacoes::classificarRelacao(Operacoes::maiorQue(vetorConjuntoA,vetorConjuntoB),instancia);
+
         system("pause");
         system("cls");
     }else if(numero == 9 && instancia.getUniverso().getConjuntos().size()>1){
@@ -168,7 +171,7 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
         Conjunto conjunto2 = apoio2[1];
         vector <int> vetorConjuntoB = conjunto2.getConjunto();
-
+        Operacoes::impressao(Operacoes::igualA(vetorConjuntoA,vetorConjuntoB));cout<<endl;
         Operacoes::classificarRelacao(Operacoes::igualA(vetorConjuntoA,vetorConjuntoB),instancia);
 
         system("pause");
@@ -180,7 +183,7 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
         Conjunto conjunto2 = apoio2[1];
         vector <int> vetorConjuntoB = conjunto2.getConjunto();
-
+        Operacoes::impressao(Operacoes::serOQuadradoDe(vetorConjuntoA,vetorConjuntoB));cout<<endl;
         Operacoes::classificarRelacao(Operacoes::serOQuadradoDe(vetorConjuntoA,vetorConjuntoB),instancia);
 
         system("pause");
@@ -193,7 +196,7 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         vector <Conjunto> apoio2 = instancia.getUniverso().getConjuntos();
         Conjunto conjunto2 = apoio2[1];
         vector <int> vetorConjuntoB = conjunto2.getConjunto();
-
+        Operacoes::impressao(Operacoes::serRaizQuadradaDe(vetorConjuntoA,vetorConjuntoB));cout<<endl;
         Operacoes::classificarRelacao(Operacoes::serRaizQuadradaDe(vetorConjuntoA,vetorConjuntoB),instancia);
 
         system("pause");
@@ -216,7 +219,11 @@ if(instancia.getUniverso().getConjuntos().size() == 2){
         for(unsigned int j=0;j<vetorConjuntoB.size();j++){
             cout<<"Posicão ["<<j<<"]"<<" = "<<vetorConjuntoB[j]<<endl;
         }
+
+
         Operacoes::classificarRelacao(Operacoes::relacaoDoUsuario(vetorConjuntoA,vetorConjuntoB),instancia);
+        Operacoes::impressao(Operacoes::relacaoDoUsuario(vetorConjuntoA,vetorConjuntoB));cout<<endl;
+
         system("pause");
         system("cls");
 
